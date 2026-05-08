@@ -67,10 +67,28 @@
         display: flex;
         flex-direction: column;
         gap: 0.25rem;
-        scrollbar-width: none;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(132, 221, 21, 0.4) rgba(0, 10, 0, 0.3);
     }
 
-    .hud-output::-webkit-scrollbar { display: none; }
+    .hud-output::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .hud-output::-webkit-scrollbar-track {
+        background: rgba(0, 10, 0, 0.5);
+        border-left: 1px solid rgba(132, 221, 21, 0.1);
+    }
+
+    .hud-output::-webkit-scrollbar-thumb {
+        background: rgba(132, 221, 21, 0.35);
+        box-shadow: 0 0 6px rgba(132, 221, 21, 0.4);
+    }
+
+    .hud-output::-webkit-scrollbar-thumb:hover {
+        background: rgba(132, 221, 21, 0.65);
+        box-shadow: 0 0 10px rgba(132, 221, 21, 0.7);
+    }
 
     .hud-line {
         font-size: 0.88rem;
@@ -136,8 +154,12 @@
         new("Bem-vindo ao Cleaning Manager.", "ai"),
         new("Presented by Bruno Rodrigues.", "sys"),
         new("─────────────────────────────────────────", "sys"),
-        new("Digite um comando para começar.", "ai"),
-        new("", "sys"),
+        new("Sugestões de comandos:", "ai"),
+        new("  > monte um cronograma de manutenção para o ano", "sys"),
+        new("  > o que está vencido ou próximo do vencimento?", "sys"),
+        new("  > limpei o ar-condicionado em 10/02/2025, quando faço de novo?", "sys"),
+        new("  > distribua as tarefas de forma que não sobrecarregue nenhum mês", "sys"),
+        new("─────────────────────────────────────────", "sys"),
     };
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
