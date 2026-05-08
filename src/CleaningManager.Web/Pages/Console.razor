@@ -4,14 +4,154 @@
 
 <PageTitle>Console</PageTitle>
 
-@* <video autoplay muted playsinline style="position:fixed;inset:0;width:100%;height:100%;object-fit:cover;background:#000;">
-    <source src="console2.mp4" type="video/mp4" />
-</video> *@
+<div class="hud">
+    <header class="hud-header">
+        <span class="blink">█</span>
+        <span class="hud-title">CLEANING MANAGER v1.0</span>
+    </header>
 
-@* <img  src="a.png"/> *@
+    <div class="hud-output" id="hud-output">
+        @foreach (var line in _lines)
+        {
+            <div class="hud-line @line.Css">@line.Text</div>
+        }
+    </div>
 
-<video
-       autoplay playsinline loop
-       style="position:fixed;inset:0;width:100%;height:100%;object-fit:cover;background:#000;"  onended="this.pause()">
-    <source src="console2.mp4" type="video/mp4" />
-</video>
+    <div class="hud-input-row">
+        <span class="hud-prompt">&gt; </span>
+        <input @ref="_inputRef"
+               type="text"
+               class="hud-input"
+               placeholder="aguardando comando..."
+               value="@_inputText"
+               @oninput="e => _inputText = e.Value?.ToString() ?? string.Empty"
+               @onkeydown="OnKeyDown" />
+    </div>
+</div>
+
+<style>
+    html, body { margin: 0; padding: 0; overflow: hidden; background: #000; }
+
+    .hud {
+        position: fixed;
+        inset: 8%;
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem 2rem;
+        box-sizing: border-box;
+        background: rgba(0, 10, 0, 0.8);
+        font-family: 'Courier New', monospace;
+        color: #84dd15;
+    }
+
+    .hud-header {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        border-bottom: 1px solid rgba(132, 221, 21, 0.3);
+        padding-bottom: 0.6rem;
+        margin-bottom: 1rem;
+        font-size: 0.85rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        text-shadow: 0 0 8px #84dd15;
+    }
+
+    .hud-title { font-weight: bold; }
+
+    .hud-output {
+        flex: 1;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        scrollbar-width: none;
+    }
+
+    .hud-output::-webkit-scrollbar { display: none; }
+
+    .hud-line {
+        font-size: 0.88rem;
+        line-height: 1.6;
+        text-shadow: 0 0 6px rgba(132, 221, 21, 0.6);
+    }
+
+    .hud-line.sys { color: rgba(132, 221, 21, 0.55); }
+    .hud-line.usr { color: #e3e2e4; text-shadow: none; }
+    .hud-line.ai  { color: #84dd15; }
+
+    .hud-input-row {
+        display: flex;
+        align-items: center;
+        border-top: 1px solid rgba(132, 221, 21, 0.3);
+        padding-top: 0.6rem;
+        margin-top: 0.5rem;
+        gap: 0.25rem;
+    }
+
+    .hud-prompt {
+        color: #84dd15;
+        text-shadow: 0 0 8px #84dd15;
+        white-space: pre;
+        font-size: 0.95rem;
+    }
+
+    .hud-input {
+        flex: 1;
+        background: transparent;
+        border: none;
+        outline: none;
+        color: #e3e2e4;
+        font-family: 'Courier New', monospace;
+        font-size: 0.9rem;
+        caret-color: #84dd15;
+    }
+
+    .hud-input::placeholder { color: rgba(132, 221, 21, 0.3); }
+
+    .blink {
+        animation: blink 1s step-start infinite;
+        color: #84dd15;
+        text-shadow: 0 0 8px #84dd15;
+    }
+
+    @@keyframes blink {
+        50% { opacity: 0; }
+    }
+</style>
+
+@code {
+    private ElementReference _inputRef;
+    private string _inputText = "";
+
+    private List<ConsoleLine> _lines = new()
+    {
+        new("SISTEMA INICIALIZADO", "sys"),
+        new("─────────────────────────────────────────", "sys"),
+        new("Bem-vindo ao Cleaning Manager.", "ai"),
+        new("Digite um comando para começar.", "ai"),
+        new("", "sys"),
+    };
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+            await _inputRef.FocusAsync();
+    }
+
+    private async Task OnKeyDown(KeyboardEventArgs e)
+    {
+        if (e.Key != "Enter" || string.IsNullOrWhiteSpace(_inputText)) return;
+
+        var cmd = _inputText.Trim();
+        _inputText = "";
+
+        _lines.Add(new($"> {cmd}", "usr"));
+        _lines.Add(new("Processando...", "sys"));
+
+        StateHasChanged();
+        await JS.InvokeVoidAsync("scrollToBottom", "hud-output");
+    }
+
+    record ConsoleLine(string Text, string Css);
+}

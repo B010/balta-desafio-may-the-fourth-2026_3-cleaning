@@ -15,24 +15,12 @@
 </head>
 
 <body>
-    <div id="splash" style="position:fixed;inset:0;z-index:9999;background:#000;cursor:pointer;"
-        onclick="splashClick()">
-        <video id="splashVideo" autoplay muted playsinline
-            style="width:100%;height:100%;object-fit:cover;pointer-events:none;" onended="this.pause()">
-            <source src="console2.mp4" type="video/mp4" />
-        </video>
-    </div>
-    <script>
-        // function splashClick() {
-        //     var v = document.getElementById('splashVideo');
-        //     v.muted = false;
-        //     v.currentTime = 0;
-        //     v.play();
-        //     document.getElementById('splash').onclick = null;
-        // }
-    </script>
+    <video id="bgVideo" autoplay muted playsinline style="position:fixed;inset:0;width:100%;height:100%;
+                  object-fit:cover;transform-origin:58% center;z-index:0;">
+        <source src="console3.mp4" type="video/mp4" />
+    </video>
 
-    <div id="app">
+    <div id="app" style="position:relative;z-index:1;opacity:0;transition:opacity 0.6s ease;">
         <svg class="loading-progress">
             <circle r="40%" cx="50%" cy="50%" />
             <circle r="40%" cx="50%" cy="50%" />
@@ -46,6 +34,25 @@
         <span class="dismiss">🗙</span>
     </div>
     <script src="_framework/blazor.webassembly#[.{fingerprint}].js"></script>
+    <script>
+        var bgVideo = document.getElementById('bgVideo');
+
+        bgVideo.addEventListener('ended', function () {
+            // zoom suave na tela verde
+            bgVideo.style.transition = 'transform 1.2s cubic-bezier(0.4, 0, 0.2, 1)';
+            bgVideo.style.transform = 'scale(1.8)';
+
+            // HUD aparece depois do zoom
+            setTimeout(function () {
+                document.getElementById('app').style.opacity = '1';
+            }, 1000);
+        });
+
+        function scrollToBottom(id) {
+            var el = document.getElementById(id);
+            if (el) el.scrollTop = el.scrollHeight;
+        }
+    </script>
 </body>
 
 </html>
