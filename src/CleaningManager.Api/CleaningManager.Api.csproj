@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.7" />
+    <PackageReference Include="Microsoft.Extensions.AI.OpenAI" Version="*" />
   </ItemGroup>
 
   <ItemGroup>

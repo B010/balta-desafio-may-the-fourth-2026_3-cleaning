@@ -1,11 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "DZfeHCxyVWI=",
+  "dgSpecHash": "EgLk1Rlqjjs=",
   "success": true,
   "projectFilePath": "C:\\Projetos\\balta-desafio-may-the-fourth-2026_3-cleaning\\src\\CleaningManager.Api\\CleaningManager.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Buggy\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.7\\microsoft.aspnetcore.openapi.10.0.7.nupkg.sha512",
-    "C:\\Users\\Buggy\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512"
+    "C:\\Users\\Buggy\\.nuget\\packages\\microsoft.extensions.ai\\10.5.2\\microsoft.extensions.ai.10.5.2.nupkg.sha512",
+    "C:\\Users\\Buggy\\.nuget\\packages\\microsoft.extensions.ai.abstractions\\10.5.2\\microsoft.extensions.ai.abstractions.10.5.2.nupkg.sha512",
+    "C:\\Users\\Buggy\\.nuget\\packages\\microsoft.extensions.ai.openai\\10.5.2\\microsoft.extensions.ai.openai.10.5.2.nupkg.sha512",
+    "C:\\Users\\Buggy\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512",
+    "C:\\Users\\Buggy\\.nuget\\packages\\openai\\2.10.0\\openai.2.10.0.nupkg.sha512",
+    "C:\\Users\\Buggy\\.nuget\\packages\\system.clientmodel\\1.10.0\\system.clientmodel.1.10.0.nupkg.sha512",
+    "C:\\Users\\Buggy\\.nuget\\packages\\system.memory.data\\10.0.3\\system.memory.data.10.0.3.nupkg.sha512",
+    "C:\\Users\\Buggy\\.nuget\\packages\\system.numerics.tensors\\10.0.6\\system.numerics.tensors.10.0.6.nupkg.sha512"
   ],
   "logs": []
 }

@@ -1,3 +1,60 @@
-src/CleaningManager.Web/obj/*
-src/CleaningManager.Web/bin/*
-src/CleaningManager.Web/Properties/PublishProfiles/*
+## Build output
+bin/
+obj/
+out/
+publish/
+
+## User secrets & API keys
+appsettings.Development.json
+appsettings.*.local.json
+secrets.json
+.env
+.env.*
+
+## Visual Studio / Rider
+.vs/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## VS Code
+.vscode/
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+## NuGet
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+project.lock.json
+project.assets.json
+
+## Logs
+*.log
+logs/
+
+## OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+## Blazor WASM publish artifacts
+wwwroot/_framework/
+Properties/PublishProfiles/
+
+## Test results
+TestResults/
+coverage/
+*.coverage
+*.coveragexml
+src/CleaningManager.Application/obj/
+src/CleaningManager.Core/obj/
+src/CleaningManager.Web/obj/
+src/CleaningManager.Infra/obj/
+src/CleaningManager.Ai/obj/
+src/CleaningManager.Api/obj/
+src/CleaningManager.Api/obj/

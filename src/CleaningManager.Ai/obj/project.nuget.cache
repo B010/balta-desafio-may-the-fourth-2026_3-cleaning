@@ -1,8 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "6eUZuV7Favg=",
+  "dgSpecHash": "PRxgzCPSrVc=",
   "success": true,
   "projectFilePath": "C:\\Projetos\\balta-desafio-may-the-fourth-2026_3-cleaning\\src\\CleaningManager.Ai\\CleaningManager.Ai.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Buggy\\.nuget\\packages\\microsoft.extensions.ai\\10.5.2\\microsoft.extensions.ai.10.5.2.nupkg.sha512",
+    "C:\\Users\\Buggy\\.nuget\\packages\\microsoft.extensions.ai.abstractions\\10.5.2\\microsoft.extensions.ai.abstractions.10.5.2.nupkg.sha512",
+    "C:\\Users\\Buggy\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\10.0.6\\microsoft.extensions.caching.abstractions.10.0.6.nupkg.sha512",
+    "C:\\Users\\Buggy\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\10.0.6\\microsoft.extensions.dependencyinjection.abstractions.10.0.6.nupkg.sha512",
+    "C:\\Users\\Buggy\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\10.0.6\\microsoft.extensions.logging.abstractions.10.0.6.nupkg.sha512",
+    "C:\\Users\\Buggy\\.nuget\\packages\\microsoft.extensions.primitives\\10.0.6\\microsoft.extensions.primitives.10.0.6.nupkg.sha512",
+    "C:\\Users\\Buggy\\.nuget\\packages\\system.numerics.tensors\\10.0.6\\system.numerics.tensors.10.0.6.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "8QIH9svOkVY=",
+  "dgSpecHash": "Euad2/spZ7w=",
   "success": true,
   "projectFilePath": "C:\\Projetos\\balta-desafio-may-the-fourth-2026_3-cleaning\\src\\CleaningManager.Application\\CleaningManager.Application.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Buggy\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\10.0.7\\microsoft.extensions.dependencyinjection.abstractions.10.0.7.nupkg.sha512"
+  ],
   "logs": []
 }
