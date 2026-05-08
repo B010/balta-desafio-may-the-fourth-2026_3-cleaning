@@ -33,8 +33,8 @@ Neste processo eu aprendi:
 ## Problema
 --
 
-## Sobre o ay The Fourth 2026
-O desafio **ay The Fourth 2026** consiste em implementar agentes e inteligência artificial em cenários reais, resolvendo problemas do dia-a-dia com Microsoft Agent Framework, C# e .NET.
+## Sobre o May The Fourth 2026
+O desafio **May The Fourth 2026** consiste em implementar agentes e inteligência artificial em cenários reais, resolvendo problemas do dia-a-dia com Microsoft Agent Framework, C# e .NET.
 
 ### Imersão - Microsoft Agents Framework
 https://www.youtube.com/watch?v=XkgjeBurtFw
