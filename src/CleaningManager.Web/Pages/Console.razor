@@ -1,0 +1,17 @@
+﻿@page "/"
+@layout EmptyLayout
+@inject IJSRuntime JS
+
+<PageTitle>Console</PageTitle>
+
+@* <video autoplay muted playsinline style="position:fixed;inset:0;width:100%;height:100%;object-fit:cover;background:#000;">
+    <source src="console2.mp4" type="video/mp4" />
+</video> *@
+
+@* <img  src="a.png"/> *@
+
+<video
+       autoplay playsinline loop
+       style="position:fixed;inset:0;width:100%;height:100%;object-fit:cover;background:#000;"  onended="this.pause()">
+    <source src="console2.mp4" type="video/mp4" />
+</video>
