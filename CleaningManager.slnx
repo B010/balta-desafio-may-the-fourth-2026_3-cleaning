@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/CleaningManager.Ai/CleaningManager.Ai.csproj" />
+    <Project Path="src/CleaningManager.Api/CleaningManager.Api.csproj" />
+    <Project Path="src/CleaningManager.Application/CleaningManager.Application.csproj" />
+    <Project Path="src/CleaningManager.Core/CleaningManager.Core.csproj" />
+    <Project Path="src/CleaningManager.Infra/CleaningManager.Infra.csproj" />
+    <Project Path="src/CleaningManager.Web/CleaningManager.Web.csproj" />
+  </Folder>
+</Solution>
